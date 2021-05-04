@@ -1,3 +1,6 @@
+# file with endpoint and user info
+sendMessage.js
+
 # Logs
 logs
 *.log
