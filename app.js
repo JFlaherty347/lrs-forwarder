@@ -3,7 +3,6 @@ const express = require('@feathersjs/express');
 const socketio = require('@feathersjs/socketio');
 
 var TinCan = require('tincanjs');
-var LRSloader = require('./LRSloader');
 var sendMessage = require('./sendMessage');
 
 class LRS_forwarder
