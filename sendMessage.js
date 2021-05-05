@@ -8,14 +8,14 @@ module.exports =
 
 		const options = 
 		{
-			hostname: 'myLRS.com', // change this with your real info
-			auth: 'user-aka-key:pass-aka-secret', // change this with your real info
-			path: '/lrs/myLRSurl/statements', // change this with your real info
+			hostname: process.env.LRSF_HOSTNAME,
+			auth: process.env.LRSF_AUTH,
+			path: process.env.LRSF_PATH,
 			method: 'POST',
 			headers: 
 			{
-				'Content-Type': 'application/json', 
-				'X-Experience-API-Version': '1.0.3' 
+				'Content-Type': 'application/json',
+				'X-Experience-API-Version': '1.0.3'
 			}
 		}
 
@@ -25,8 +25,7 @@ module.exports =
 
 			res.on('data', d => 
 			{
-				console.log('Result: ' + d)
-
+				console.log('Result ' + d)
 			})
 		})
 
