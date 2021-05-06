@@ -2,9 +2,11 @@ const feathers = require('@feathersjs/feathers');
 const express = require('@feathersjs/express');
 const socketio = require('@feathersjs/socketio');
 
-var path = require('path');
-var TinCan = require('tincanjs');
-var sendMessage = require(path.resolve( __dirname, './sendMessage'));
+const path = require('path');
+const TinCan = require('tincanjs');
+const sendMessage = require(path.resolve( __dirname, './sendMessage'));
+
+const PORT = process.env.PORT || 3030
 
 class LRS_forwarder
 {
@@ -45,6 +47,6 @@ app.on('connection', connection =>
 
 app.publish(data => app.channel('everybody'));
 
-app.listen(3030).on('listening', () =>
-	console.log('Feathers server listening on localhost:3030')
+app.listen(PORT).on('listening', () =>
+	console.log('Feathers server listening on port ' + PORT)
 );
