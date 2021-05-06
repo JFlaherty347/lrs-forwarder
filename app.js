@@ -4,6 +4,7 @@ const socketio = require('@feathersjs/socketio');
 
 const path = require('path');
 const TinCan = require('tincanjs');
+const cors = require('cors');
 const sendMessage = require(path.resolve( __dirname, './sendMessage'));
 
 const PORT = process.env.PORT || 3030
@@ -32,6 +33,7 @@ class LRS_forwarder
 
 const app = express(feathers());
 
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 app.use(express.static(__dirname));
