@@ -1,5 +1,5 @@
 # file with endpoint and user info
-sendMessage.js
+# sendMessage.js #changed to env vars
 
 # Logs
 logs
