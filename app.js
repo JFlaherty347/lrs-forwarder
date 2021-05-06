@@ -2,8 +2,9 @@ const feathers = require('@feathersjs/feathers');
 const express = require('@feathersjs/express');
 const socketio = require('@feathersjs/socketio');
 
+var path = require('path');
 var TinCan = require('tincanjs');
-var sendMessage = require('./sendMessage');
+var sendMessage = require(path.resolve( __dirname, './sendMessage'));
 
 class LRS_forwarder
 {
