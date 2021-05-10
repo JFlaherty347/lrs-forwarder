@@ -33,13 +33,21 @@ class LRS_forwarder
 
 const app = express(feathers());
 
-// app.use(cors());
-app.use(function(req, res, next) {
-	console.log("Accepting with CORS")
- 	res.header("Access-Control-Allow-Origin", "cilearn.csuci.edu"); 
-	res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-	next();
-});
+var corsOptions = 
+{
+  'origin': 'cilearn.csuci.edu',
+  'optionsSuccessStatus': 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
+  'methods': 'POST',
+  'Access-Control-Allow-Headers': 'Content-Type',
+  'credentials': true
+}
+app.use(cors());
+// app.use(function(req, res, next) {
+// 	console.log("Accepting with CORS")
+//  	res.header("Access-Control-Allow-Origin", "cilearn.csuci.edu"); 
+// 	res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+// 	next();
+// });
 
 
 app.use(express.json());
