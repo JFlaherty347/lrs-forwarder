@@ -36,7 +36,7 @@ const app = express(feathers());
 // app.use(cors());
 app.use(function(req, res, next) {
 	console.log("Accepting with CORS")
- 	res.header("Access-Control-Allow-Origin", "canvas.instructure.com"); 
+ 	res.header("Access-Control-Allow-Origin", "cilearn.csuci.edu"); 
 	res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
 	next();
 });
