@@ -35,9 +35,10 @@ const app = express(feathers());
 
 // app.use(cors());
 app.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "canvas.instructure.com"); 
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-  next();
+	console.log("Accepting with CORS")
+ 	res.header("Access-Control-Allow-Origin", "canvas.instructure.com"); 
+	res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+	next();
 });
 
 
