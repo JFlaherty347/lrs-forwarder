@@ -1,11 +1,13 @@
 const https = require('https');
-const fix = require('./removeXapiMistakes');
+const path = require('path');
+
+const removeXAPImistakes = require(path.resolve( __dirname,'./removeXapiMistakes'));
 
 module.exports =
 {
 	sendMessage: function(data) 
 	{
-		fixed_data = removeXapiMistakes(data);
+		fixed_data = removeXAPImistakes(data);
 		stringified_data = JSON.stringify(fixed_data)
 
 		const options = 
