@@ -19,6 +19,7 @@ class LRS_forwarder
 
 	async create(data)
 	{
+		console.log("Received data: (" + data + "): " + JSON.stringify(data));
 		var status = sendMessage.sendMessage(data);
 
 		return status

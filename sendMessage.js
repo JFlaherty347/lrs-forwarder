@@ -7,8 +7,12 @@ module.exports =
 {
 	sendMessage: function(data) 
 	{
+		console.log("Working with data: " + JSON.stringify(data));
+
 		fixed_data = removeXAPImistakes(data);
 		stringified_data = JSON.stringify(fixed_data)
+
+		console.log("Final data attempting to send: " + stringified_data);
 
 		const options = 
 		{
