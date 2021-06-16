@@ -1,10 +1,12 @@
-const https = require('https')
+const https = require('https');
+const fix = require('./removeXapiMistakes');
 
 module.exports =
 {
 	sendMessage: function(data) 
 	{
-		data = JSON.stringify(data)
+		fixed_data = removeXapiMistakes(data);
+		stringified_data = JSON.stringify(fixed_data)
 
 		const options = 
 		{
@@ -23,7 +25,7 @@ module.exports =
 		{
 			console.log(`statusCode: ${res.statusCode}`)
 
-			res.on('data', d => 
+			res.on('stringified_data', d => 
 			{
 				console.log('Result ' + d)
 			})
@@ -34,7 +36,7 @@ module.exports =
 			console.error(error)
 		})
 
-		req.write(data)
+		req.write(stringified_data)
 		req.end()
 
 		return true
